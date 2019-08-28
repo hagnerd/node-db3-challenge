@@ -4,7 +4,12 @@ function find() {
   return db.select("*").from("schemes");
 }
 
-function findById(id) {}
+function findById(id) {
+  return db
+    .select("*")
+    .from("schemes")
+    .where({ id });
+}
 
 function findSteps(id) {}
 
