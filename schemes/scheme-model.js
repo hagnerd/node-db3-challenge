@@ -1,6 +1,8 @@
 const db = require("../db");
 
-function find() {}
+function find() {
+  return db.select("*").from("schemes");
+}
 
 function findById(id) {}
 
