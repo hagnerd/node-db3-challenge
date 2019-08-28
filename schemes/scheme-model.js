@@ -25,7 +25,15 @@ function findSteps(id) {
     .where({ scheme_id: id });
 }
 
-function add(scheme) {}
+async function add(scheme) {
+  const [id] = await db.from("schemes").insert(scheme);
+  const newScheme = await db
+    .select("*")
+    .from("schemes")
+    .where({ id });
+
+  return newScheme;
+}
 
 function update(changes, id) {}
 
