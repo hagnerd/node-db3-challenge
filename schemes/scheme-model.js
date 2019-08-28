@@ -46,7 +46,20 @@ async function update(changes, id) {
   return db.from("schemes").where({ id });
 }
 
-function remove(id) {}
+async function remove(id) {
+  const [scheme] = await db.from("schemes").where({ id });
+
+  if (!scheme) {
+    return null;
+  }
+
+  await db
+    .from("schemes")
+    .del()
+    .where({ id });
+
+  return scheme;
+}
 
 module.exports = {
   find,
