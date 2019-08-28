@@ -11,7 +11,12 @@ function findById(id) {
     .where({ id });
 }
 
-function findSteps(id) {}
+function findSteps(id) {
+  return db
+    .from("schemes")
+    .innerJoin("steps", "schemes.id", "steps.scheme_id")
+    .where({ scheme_id: id });
+}
 
 function add(scheme) {}
 
