@@ -4,11 +4,13 @@ function find() {
   return db.select("*").from("schemes");
 }
 
-function findById(id) {
-  return db
+async function findById(id) {
+  const [scheme] = await db
     .select("*")
     .from("schemes")
     .where({ id });
+
+  return scheme ? scheme : null;
 }
 
 function findSteps(id) {
