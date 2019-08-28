@@ -33,4 +33,9 @@ JOIN Employees AS E ON E.EmployeeID = O.EmployeeID;
 
 ### (Stretch)  Displays CategoryName and a new column called Count that shows how many products are in each category. Shows 9 records.
 
+```sql
+```
+
 ### (Stretch) Display OrderID and a  column called ItemCount that shows the total number of products placed on the order. Shows 196 records. 
+```sql
+```
